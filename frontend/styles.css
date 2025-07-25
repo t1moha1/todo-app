@@ -1,0 +1,41 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+}
+.container {
+  max-width: 600px;
+  margin: 30px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+.input-group {
+  display: flex;
+  margin-bottom: 20px;
+}
+#new-task {
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+}
+#add-btn {
+  padding: 8px 16px;
+  margin-left: 8px;
+  font-size: 16px;
+}
+#todo-list li {
+  display: flex;
+  align-items: center;
+  padding: 6px 0;
+}
+#todo-list li span {
+  flex: 1;
+  margin-left: 8px;
+}
+#todo-list li button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #c00;
+  font-size: 18px;
+}

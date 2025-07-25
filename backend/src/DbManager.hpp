@@ -11,7 +11,7 @@ public:
     std::vector<Task> getAll();
     Task getById(int id);
     int create(const Task& t);
-    bool update(const Task& t);
+    std::optional<Task> update(const Task& t);
     bool remove(int id);
 
 private:
