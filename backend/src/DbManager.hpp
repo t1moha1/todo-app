@@ -3,6 +3,7 @@
 #include <string>
 #include <pqxx/pqxx>
 #include "model/Task.hpp"
+#include <optional>
 
 class DbManager {
 public:

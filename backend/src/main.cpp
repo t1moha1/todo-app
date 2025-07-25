@@ -45,28 +45,22 @@ int main() {
         }
 
         json j;
-        try { j = json::parse(req.body); }
-        catch(...) {
+        try {
+            j = json::parse(req.body);
+        } catch (...) {
             res.status = 400;
-            res.set_content(R"({"error":"invalid json"})", "application/json");
-            return;
+             res.set_content(R"({"error":"invalid json"})", "application/json");
         }
 
         Task t;
         t.id = id;
-        if (j.contains("title") && j["title"].is_string())
+
+        if (j.contains("title") && j["title"].is_string()) {
             t.title = j["title"].get<std::string>();
-        else {
-            res.status = 400;
-            res.set_content(R"({"error":"title is required and must be string"})", "application/json");
-            return;
         }
-        if (j.contains("done") && j["done"].is_boolean())
+
+        if(j.contains("done") && j["done"].is_boolean()) {
             t.done = j["done"].get<bool>();
-        else {
-            res.status = 400;
-            res.set_content(R"({"error":"done is required and must be boolean"})", "application/json");
-            return;
         }
 
         auto updated_opt = db.update(t);
