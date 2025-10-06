@@ -49,7 +49,7 @@ int main() {
             j = json::parse(req.body);
         } catch (...) {
             res.status = 400;
-             res.set_content(R"({"error":"invalid json"})", "application/json");
+            res.set_content(R"({"error":"invalid json"})", "application/json");
         }
 
         Task t;
